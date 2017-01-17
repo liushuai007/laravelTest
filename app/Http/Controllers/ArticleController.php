@@ -71,7 +71,7 @@ class ArticleController extends Controller
         $art = article::where('id', $id)
         ->get();
         $art->title = '小损钞';
-        $affected_rows = $art->save;
+        $affected_rows = $art->save();
 
     }
 
