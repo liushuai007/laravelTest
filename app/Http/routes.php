@@ -23,4 +23,5 @@ Route::get('user/edit', 'UserController@edit');
 
 Route::get('user/del', 'UserController@delete');
 
-Route::get('user/turnCate', 'UserController@turnCate');
+
+Route::get('article/index', 'ArticleController@index');
