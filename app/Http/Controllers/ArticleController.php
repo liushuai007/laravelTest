@@ -29,9 +29,9 @@ class ArticleController extends Controller
     {
         $art = new Article();
 
-        $art->title = '小钞钞2';
-        $art->content = '小钞钞不算太傻2';
-        $art->author = '小钞钞2';
+        $art->title = '小钞钞';
+        $art->content = '小钞钞不算太傻';
+        $art->author = '小钞钞';
 
         $res = $art->save();
 
@@ -68,10 +68,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $art = article::where('id', $id)
-        ->get();
+        $art = article::find($id);
         $art->title = '小损钞';
-        $affected_rows = $art->save();
+        $art->save();
 
     }
 
