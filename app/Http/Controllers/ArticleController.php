@@ -19,7 +19,7 @@ class ArticleController extends Controller
     {
         $articles = article::get();
         foreach ($articles as $article) {
-            echo $article->title;
+            echo $article->title . '<br/>';
         }
     }
 
