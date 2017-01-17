@@ -16,13 +16,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = user :: where('id >', 1)
+        $users = user :: where('id', 1)
                 ->orderBy('id','desc')
                 ->take(10)
                 ->get();
 
-        echo '<pre>';
-        var_dump($users);
+        foreach ($users as $user) {
+            echo $user->title;
+        }
     }
 
     /**
