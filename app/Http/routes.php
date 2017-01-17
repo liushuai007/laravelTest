@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('user/index', 'UserController@index');
+
+Route::get('user/create', 'UserController@create');
+
+Route::get('user/edit', 'UserController@edit');
+
+Route::get('user/del', 'UserController@delete');
+
+Route::get('user/turnCate', 'UserController@turnCate');

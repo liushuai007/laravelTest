@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use App;
 use DB;
 use App\Http\Controllers\Controller;
 
@@ -16,9 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
+        $users = DB::select('select `id`,`name`,`email`,`created_at`,`updated_at` from users');
+        echo '<pre>';
         var_dump($users);
-        return view('welcome', ['users' => $users]);
     }
 
     /**
@@ -28,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $users = DB::insert('insert into `users` (`name`,`email`,`created_at`,`updated_at`) values ("钞钞","1436091534@qq.com","' . date('Y-m-d H:i:s') . '", "' . date('Y-m-d H:i:s') . '")');
+        return '数据添加成功';
     }
 
     /**
@@ -59,9 +60,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        DB::update("update users set name = ? where id = ?", ['赵四', 1]);
+        return '数据修改成功';
     }
 
     /**
@@ -85,5 +87,17 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete()
+    {
+        DB::delete("delete from users where id = ?",[1]);
+        return '数据删除成功';
+    }
+
+    public function turnCate()
+    {
+        DB::select("TURNCATE table `users`");
+        return '数据表清空成功';
     }
 }
