@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
+use App\user as user;
 use DB;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::select('select `id`,`name`,`email`,`created_at`,`updated_at` from users');
+        $users = user :: all();
         echo '<pre>';
         var_dump($users);
     }
