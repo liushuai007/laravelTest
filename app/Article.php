@@ -22,7 +22,7 @@ class Article extends Model
 
     }
 
-    public static function create($data)
+    public static function create()
     {
         $art = new Article();
 
