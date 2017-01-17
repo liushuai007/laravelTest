@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = article::find(1)
+        $articles = article::where('id','>',1)
             ->get();
         var_dump($articles);
         foreach ($articles as $article) {
