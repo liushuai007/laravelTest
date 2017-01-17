@@ -38,7 +38,9 @@ class ArticleController extends Controller
         $art->content = '小钞钞不算太傻';
         $art->author = '小钞钞';
 
-        $art->save();
+        $res = $art->save();
+
+        var_dump($res);
     }
 
     /**
