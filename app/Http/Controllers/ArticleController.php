@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = article::index();
+
     }
 
     /**
