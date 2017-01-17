@@ -19,6 +19,9 @@ class ArticleController extends Controller
     {
         $articles = article::get();
         var_dump($articles);
+        foreach ($articles as $article) {
+            echo $article->title;
+        }
     }
 
     /**
