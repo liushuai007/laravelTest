@@ -18,7 +18,6 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = article::get();
-        var_dump($articles);
         foreach ($articles as $article) {
             echo $article->title;
         }
