@@ -68,7 +68,10 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $art = article::find($id);
+        $art->title = '小损钞';
+        $art->save;
+
     }
 
     /**

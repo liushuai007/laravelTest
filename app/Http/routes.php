@@ -26,3 +26,5 @@ Route::get('user/del', 'UserController@delete');
 Route::get('article/index', 'ArticleController@index');
 
 Route::get('article/create', 'ArticleController@create');
+
+Route::get('article/edit/{id}', 'ArticleController@edit');
