@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use Illuminate\Http\Request;
 
+use App\Article as article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = App\Article::find(1)
+        $articles = article::find(1)
             ->get();
         var_dump($articles);
         foreach ($articles as $article) {
