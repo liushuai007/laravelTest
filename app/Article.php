@@ -12,7 +12,17 @@ class Article extends Model
 
     protected $fillable = ['title', 'content', 'author', 'created_at', 'updated_at'];
 
-    public static function index($where = '')
+    public static function index($where = '', $whereClase)
+    {
+        $art = new Article();
+        if(!empty($where)){
+            $art::where($where,$whereClase);
+        }
+        return $art::get();
+
+    }
+
+    public static function create($data)
     {
         $art = new Article();
 
