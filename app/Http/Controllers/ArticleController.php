@@ -17,8 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = article::all();
-        var_dump($articles);
+        $articles = article::get();
     }
 
     /**
