@@ -20,10 +20,6 @@ class UserController extends Controller
                 ->orderBy('id','desc')
                 ->take(10)
                 ->get();
-
-        foreach ($users as $user) {
-            echo $user->title;
-        }
     }
 
     /**
