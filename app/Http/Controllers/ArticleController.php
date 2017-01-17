@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 use App\Article as article;
@@ -17,8 +18,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = article::where('id',1)
-                        ->get();
+        $articles = article::find(1)
+            ->get();
         var_dump($articles);
         foreach ($articles as $article) {
             echo $article->title;
@@ -32,7 +33,13 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $article = new Article();
+
+        $article->title = '小钞钞';
+        $article->content = '小钞钞不算太傻';
+        $article->author = '小钞钞';
+
+        $article->save();
     }
 
     /**
